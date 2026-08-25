@@ -354,6 +354,33 @@
     .pet-carousel{height:280px;}
     .carousel-arrow{width:30px;height:30px;}
   }
+
+  /* ---------- Video placeholder ---------- */
+  .video-frame{display:flex;justify-content:center;}
+  .video-placeholder{
+    width:250px;height:500px;border-radius:24px;position:relative;overflow:hidden;
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    box-shadow:0 24px 50px -20px rgba(11,15,31,.5);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .video-placeholder::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 20%, rgba(255,107,69,.18), transparent 60%);
+  }
+  .video-dim{
+    position:absolute;top:16px;left:0;right:0;text-align:center;z-index:1;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:rgba(255,255,255,.4);font-weight:700;
+  }
+  .video-play-btn{
+    width:64px;height:64px;border-radius:50%;z-index:1;
+    background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);
+    display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);
+  }
+  .video-play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px;}
+  .video-placeholder-text{z-index:1;color:rgba(255,255,255,.78);font-size:13.5px;font-weight:600;text-align:center;padding:0 20px;}
+  .product-video{width:100%;height:100%;object-fit:cover;display:block;}
 </style>
 </head>
 <body>
@@ -412,6 +439,21 @@
     </div>
   </div>
 </div>
+
+<section id="video">
+  <div class="section-head">
+    <div class="section-label">Watch</div>
+    <h2>See it in action</h2>
+    <p>A short video walkthrough of the feeder in real use.</p>
+  </div>
+  <div class="video-frame">
+    <div class="video-placeholder" id="videoPlaceholder">
+      <video class="product-video" src="/pet-feeders/product-video.mp4" autoplay muted loop playsinline controls>
+        Your browser doesn't support embedded video.
+      </video>
+    </div>
+  </div>
+</section>
 
 <section id="picks">
   <div class="section-head">
