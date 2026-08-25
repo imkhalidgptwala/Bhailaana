@@ -294,6 +294,65 @@
     .rank-badge{width:44px;height:44px;font-size:16px;}
     nav.links{display:none;}
   }
+
+  /* ---------- Pet carousel banner ---------- */
+  .pet-carousel{
+    position:relative;
+    height:260px;
+    margin:0;
+    overflow:hidden;
+    background:var(--navy-deep);
+  }
+  .pet-carousel .slide{
+    position:absolute;inset:0;
+    opacity:0;
+    transition:opacity 1.1s ease;
+  }
+  .pet-carousel .slide.active{opacity:1;}
+  .pet-carousel .slide img{
+    width:100%;height:100%;object-fit:cover;
+    transform:scale(1.06);
+    animation:kenburns 7s ease-in-out forwards;
+  }
+  @keyframes kenburns{from{transform:scale(1.06);}to{transform:scale(1.14);}}
+  .pet-carousel::before{
+    content:"";position:absolute;inset:0;z-index:2;
+    background:linear-gradient(0deg, rgba(11,15,31,.75) 0%, rgba(11,15,31,.05) 45%, rgba(11,15,31,.25) 100%);
+    pointer-events:none;
+  }
+  .carousel-caption{
+    position:absolute;left:0;right:0;bottom:20px;z-index:3;
+    text-align:center;color:#fff;
+    font-family:'Fraunces',serif;font-size:clamp(18px,2.4vw,26px);font-weight:600;
+    text-shadow:0 2px 12px rgba(0,0,0,.4);
+    padding:0 20px;
+  }
+  .carousel-dots{
+    position:absolute;left:0;right:0;bottom:8px;z-index:3;
+    display:flex;justify-content:center;gap:7px;
+  }
+  .carousel-dots button{
+    width:7px;height:7px;border-radius:50%;
+    background:rgba(255,255,255,.45);border:none;padding:0;cursor:pointer;
+    transition:background .25s ease, transform .25s ease;
+  }
+  .carousel-dots button.active{background:#fff;transform:scale(1.3);}
+  .carousel-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;backdrop-filter:blur(4px);
+    transition:background .2s ease;
+  }
+  .carousel-arrow:hover{background:rgba(255,255,255,.32);}
+  .carousel-arrow.prev{left:16px;}
+  .carousel-arrow.next{right:16px;}
+  .carousel-arrow svg{width:16px;height:16px;}
+  @media(max-width:900px){
+    .pet-carousel{height:190px;}
+    .carousel-arrow{width:30px;height:30px;}
+  }
 </style>
 </head>
 <body>
@@ -307,6 +366,21 @@
     <a class="nav-cta" href="#picks">Shop the Winner</a>
   </nav>
 </header>
+
+<div class="pet-carousel" id="petCarousel">
+  <div class="slide active"><img src="/pet-feeders/hero-cat-1.jpg" alt="Black and white tuxedo cat" loading="eager"></div>
+  <div class="slide"><img src="/pet-feeders/hero-dog-1.jpg" alt="Fluffy cream Pomeranian puppy in green foliage"></div>
+  <div class="slide"><img src="/pet-feeders/hero-cat-2.jpg" alt="Brown and white tabby cat portrait"></div>
+  <div class="slide"><img src="/pet-feeders/hero-dog-2.jpg" alt="Yorkshire terrier puppy standing outdoors"></div>
+  <div class="slide"><img src="/pet-feeders/hero-cat-3.jpg" alt="Dark tabby cat with green eyes in low light"></div>
+  <div class="slide"><img src="/pet-feeders/hero-dog-3.jpg" alt="Fluffy white poodle puppy close-up"></div>
+  <div class="slide"><img src="/pet-feeders/hero-cat-4.jpg" alt="Siamese cat with blue eyes"></div>
+  <div class="slide"><img src="/pet-feeders/hero-dog-4.jpg" alt="Small terrier puppy with tongue out"></div>
+  <div class="carousel-caption">Made for every cat and every little dog in your home</div>
+  <button class="carousel-arrow prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="carousel-arrow next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="carousel-dots"></div>
+</div>
 
 <div class="hero">
   <div class="reveal">
@@ -530,6 +604,55 @@
     }
   ]
 }
+</script>
+<script>
+(function(){
+  var root = document.getElementById('petCarousel');
+  if(!root) return;
+  var slides = root.querySelectorAll('.slide');
+  var dotsWrap = root.querySelector('.carousel-dots');
+  var i = 0, timer;
+
+  slides.forEach(function(_, idx){
+    var b = document.createElement('button');
+    if(idx === 0) b.classList.add('active');
+    b.setAttribute('aria-label', 'Go to photo ' + (idx+1));
+    b.addEventListener('click', function(){ go(idx); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = dotsWrap.querySelectorAll('button');
+
+  function restartKenBurns(slide){
+    var img = slide.querySelector('img');
+    img.style.animation = 'none';
+    void img.offsetWidth;
+    img.style.animation = '';
+  }
+
+  function go(n){
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+    restartKenBurns(slides[i]);
+  }
+
+  function next(){ go(i+1); }
+  function prev(){ go(i-1); }
+
+  function restart(){
+    clearInterval(timer);
+    timer = setInterval(next, 4200);
+  }
+
+  root.querySelector('.carousel-arrow.next').addEventListener('click', function(){ next(); restart(); });
+  root.querySelector('.carousel-arrow.prev').addEventListener('click', function(){ prev(); restart(); });
+  root.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  root.addEventListener('mouseleave', restart);
+
+  restart();
+})();
 </script>
 </body>
 </html>
