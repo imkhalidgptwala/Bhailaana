@@ -110,11 +110,11 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 
   /* ---------- Hero ---------- */
   .hero{
-    padding:8vw 6vw 6vw;
-    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    padding:3vw 6vw 2.2vw;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
     position:relative;overflow:hidden;
   }
-  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px;}
+  .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
   .pill{
     display:inline-flex;align-items:center;gap:6px;
     background:var(--panel);border:1px solid var(--line);
@@ -124,9 +124,9 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   }
   .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--mint);}
   h1{
-    font-size:clamp(36px,5vw,62px);
-    line-height:1.03;
-    margin:0 0 22px;
+    font-size:clamp(26px,3.2vw,36px);
+    line-height:1.12;
+    margin:0 0 12px;
     font-weight:700;
     letter-spacing:-.01em;
   }
@@ -135,13 +135,13 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
     background:linear-gradient(100deg,var(--sunset-deep),var(--sunset) 45%, var(--gold));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero p.lede{font-size:19px;font-weight:500;color:var(--muted);max-width:48ch;margin:0 0 30px;}
+  .hero p.lede{font-size:15px;font-weight:500;color:var(--muted);max-width:44ch;margin:0 0 16px;}
   .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
   .cta{
     display:inline-flex;align-items:center;gap:10px;
     background:linear-gradient(135deg,var(--sunset),var(--sunset-deep));
     color:#fff;
-    padding:16px 28px;border-radius:999px;
+    padding:14px 26px;border-radius:999px;
     text-decoration:none;font-weight:700;font-size:15px;
     box-shadow:0 16px 34px -12px rgba(228,78,39,.55);
     transition:transform .2s ease, box-shadow .2s ease;
@@ -155,8 +155,8 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   .hero-figure{
     position:relative;
     background:var(--panel);
-    border-radius:28px;
-    padding:38px;
+    border-radius:24px;
+    padding:16px;
     box-shadow:var(--shadow-lg);
     border:1px solid var(--line);
   }
@@ -178,44 +178,53 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   }
   .hero-figure .img-frame{
     background:radial-gradient(circle at 50% 40%, #FFF3E7, #FCEBD8 70%);
-    border-radius:20px;padding:22px;margin-bottom:20px;
+    border-radius:16px;padding:10px;margin-bottom:10px;
   }
-  .hero-figure img{width:100%;max-height:230px;object-fit:contain;}
-  .rating-row{display:flex;align-items:baseline;gap:12px;margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);}
-  .rating-num{font-size:38px;font-weight:700;color:var(--navy-deep);font-family:'Fraunces',serif;}
-  .rating-sub{font-size:13px;color:var(--muted);font-weight:500;}
+  .hero-figure img{width:100%;max-height:104px;object-fit:contain;}
+  .rating-row{display:flex;align-items:baseline;gap:12px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);}
+  .rating-num{font-size:28px;font-weight:700;color:var(--navy-deep);font-family:'Fraunces',serif;}
+  .rating-sub{font-size:12px;color:var(--muted);font-weight:500;}
 
   /* ---------- Sections ---------- */
-  section{padding:2.6vw 6vw;position:relative;}
-  .section-head{max-width:640px;margin:0 auto 32px;text-align:left;}
+  section{padding:2.2vw 6vw;position:relative;}
+  #picks{padding-top:1.2vw;}
+  .section-head{max-width:640px;margin:0 auto 18px;text-align:left;}
   .section-label{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12px;letter-spacing:.14em;text-transform:uppercase;
     color:var(--sunset-deep);font-weight:800;margin-bottom:12px;
   }
   .section-label::before{content:"";width:22px;height:2px;background:var(--sunset-deep);display:inline-block;}
-  h2{font-size:clamp(28px,3.4vw,40px);margin:0;font-weight:700;letter-spacing:-.01em;}
-  h2 + p{color:var(--muted);font-weight:500;font-size:17px;margin-top:14px;max-width:56ch;}
+  h2{font-size:clamp(24px,3vw,34px);margin:0;font-weight:700;letter-spacing:-.01em;}
+  h2 + p{color:var(--muted);font-weight:500;font-size:15.5px;margin-top:8px;max-width:56ch;}
 
   /* ---------- Picks ---------- */
-  .picks{display:grid;gap:24px;}
+  .picks{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;}
   .pick{
     background:var(--panel);
     border:1px solid var(--line);
-    border-radius:24px;
-    padding:32px;
-    display:grid;
-    grid-template-columns:auto 170px 1fr auto;
-    gap:28px;align-items:center;
+    border-radius:22px;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
     box-shadow:var(--shadow);
     transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    position:relative;
   }
-  .pick:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent;}
+  .pick:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent;}
   .pick.gold{background:linear-gradient(180deg,#FFFDFA, #FFF6EC);}
+  .pick.gold::after{
+    content:"🏆 Top pick";position:absolute;top:-12px;right:20px;
+    background:linear-gradient(135deg,var(--sunset),var(--sunset-deep));color:#fff;
+    font-size:11px;font-weight:800;letter-spacing:.04em;
+    padding:6px 14px;border-radius:999px;
+    box-shadow:0 10px 18px -8px rgba(228,78,39,.55);
+  }
   .rank-badge{
-    width:56px;height:56px;border-radius:50%;
+    position:absolute;top:14px;left:14px;z-index:2;
+    width:38px;height:38px;border-radius:50%;
     display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:#fff;
+    font-family:'Fraunces',serif;font-weight:700;font-size:15px;color:#fff;
     box-shadow:0 10px 20px -8px rgba(0,0,0,.35);
   }
   .rank-badge.r1{background:linear-gradient(145deg,#FFD98A,#F6A93B);}
@@ -223,70 +232,80 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   .rank-badge.r3{background:linear-gradient(145deg,#E3B08C,#C1774B);}
   .pick-img-wrap{
     background:radial-gradient(circle at 50% 40%, #FFF3E7, #FCEBD8 70%);
-    border-radius:16px;padding:14px;
+    border-radius:16px;padding:12px;margin-bottom:14px;
+    display:flex;align-items:center;justify-content:center;
   }
-  .pick-img{width:100%;height:120px;object-fit:contain;}
-  .pick h3{margin:0 0 8px;font-size:21px;font-weight:700;}
+  .pick-img{width:100%;height:104px;object-fit:contain;}
+  .pick h3{margin:0 0 8px;font-size:16.5px;font-weight:700;line-height:1.25;}
   .pick .meta{
     display:inline-flex;align-items:center;gap:6px;
     background:#F4EDE0;color:var(--navy);
-    font-size:12.5px;font-weight:700;
-    padding:5px 12px;border-radius:999px;margin-bottom:12px;
+    font-size:12px;font-weight:700;
+    padding:5px 12px;border-radius:999px;margin-bottom:10px;width:fit-content;
   }
-  .pick p.desc{margin:0;color:var(--muted);font-weight:500;font-size:16px;max-width:58ch;}
+  .pick p.desc{
+    margin:0 0 16px;color:var(--muted);font-weight:500;font-size:13.5px;flex:1;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  }
   .buy{
-    display:inline-flex;align-items:center;gap:8px;
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
     font-weight:700;font-size:14px;
     color:#fff;background:var(--navy-deep);
     padding:13px 22px;border-radius:999px;
-    text-decoration:none;white-space:nowrap;
+    text-decoration:none;white-space:nowrap;width:100%;
     transition:background .2s ease, transform .2s ease;
   }
   .buy:hover{background:var(--sunset-deep);transform:translateY(-2px);}
   .buy svg{width:14px;height:14px;}
+  @media(max-width:1000px){.picks{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.picks{grid-template-columns:1fr;}}
 
   /* ---------- Compare table ---------- */
   .table-card{
-    background:var(--panel);border-radius:24px;border:1px solid var(--line);
+    background:var(--panel);border-radius:18px;border:1px solid var(--line);
     box-shadow:var(--shadow);overflow:hidden;
   }
   .table-scroll{overflow-x:auto;}
-  table{width:100%;border-collapse:collapse;font-size:15.5px;font-weight:500;min-width:640px;}
-  th,td{text-align:left;padding:16px 20px;border-bottom:1px solid var(--line);color:var(--ink);}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;font-weight:500;min-width:600px;}
+  th,td{text-align:left;padding:10px 16px;border-bottom:1px solid var(--line);color:var(--ink);}
   th{
-    text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;
+    text-transform:uppercase;letter-spacing:.06em;font-size:10.5px;
     color:var(--muted);background:#FBF4EA;font-weight:700;
   }
   tbody tr:last-child td{border-bottom:none;}
   tbody tr:hover td{background:#FFF9F2;}
   td.yes{color:var(--mint);font-weight:700;}
-  .check{display:inline-flex;width:20px;height:20px;border-radius:50%;background:rgba(46,158,127,.15);color:var(--mint);align-items:center;justify-content:center;margin-right:6px;}
-  .check svg{width:11px;height:11px;}
+  .check{display:inline-flex;width:16px;height:16px;border-radius:50%;background:rgba(46,158,127,.15);color:var(--mint);align-items:center;justify-content:center;margin-right:5px;}
+  .check svg{width:9px;height:9px;}
 
   /* ---------- FAQ ---------- */
-  .faq{max-width:760px;display:grid;gap:14px;}
-  .faq details{
+  .faq{
+    max-width:760px;
     background:var(--panel);
     border:1px solid var(--line);
-    border-radius:16px;
-    padding:6px 24px;
-    box-shadow:0 8px 20px -14px rgba(20,27,51,.2);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
   }
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq details:last-child{border-bottom:none;}
   .faq summary{
-    font-weight:700;font-size:16px;
+    font-weight:600;font-size:14px;
     cursor:pointer;list-style:none;
-    padding:18px 0;
+    padding:9px 20px;
     display:flex;justify-content:space-between;align-items:center;gap:16px;
+    transition:background .15s ease;
   }
+  .faq summary:hover{background:#FBF4EA;}
   .faq summary::-webkit-details-marker{display:none;}
   .faq .icon{
-    width:26px;height:26px;border-radius:50%;background:#F4EDE0;
+    width:18px;height:18px;border-radius:50%;background:#F4EDE0;
     display:flex;align-items:center;justify-content:center;flex:none;
     transition:transform .25s ease, background .25s ease;
   }
   .faq details[open] .icon{background:var(--sunset);color:#fff;transform:rotate(45deg);}
-  .faq .icon svg{width:12px;height:12px;}
-  .faq p{color:var(--muted);font-weight:500;margin:0 0 20px;font-size:16px;}
+  .faq .icon svg{width:9px;height:9px;}
+  .faq p{color:var(--muted);font-weight:500;margin:0;padding:0 20px 12px;font-size:13px;}
 
   /* ---------- Disclosure ---------- */
   .disclosure{
@@ -309,16 +328,14 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   footer .brand{font-size:15px;}
 
   @media(max-width:900px){
-    .hero{grid-template-columns:1fr;padding-top:12vw;}
-    .pick{grid-template-columns:1fr;text-align:left;}
-    .rank-badge{width:44px;height:44px;font-size:16px;}
+    .hero{grid-template-columns:1fr;padding-top:8vw;}
     nav.links{display:none;}
   }
 
   /* ---------- Pet carousel banner ---------- */
   .pet-carousel{
     position:relative;
-    height:420px;
+    height:230px;
     margin:0;
     overflow:hidden;
     background:var(--navy-deep);
@@ -370,36 +387,10 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   .carousel-arrow.next{right:16px;}
   .carousel-arrow svg{width:16px;height:16px;}
   @media(max-width:900px){
-    .pet-carousel{height:280px;}
+    .pet-carousel{height:190px;}
     .carousel-arrow{width:30px;height:30px;}
   }
 
-  /* ---------- Video placeholder ---------- */
-  .video-frame{display:flex;justify-content:center;}
-  .video-placeholder{
-    width:250px;height:500px;border-radius:24px;position:relative;overflow:hidden;
-    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
-    box-shadow:0 24px 50px -20px rgba(11,15,31,.5);
-    border:1px solid rgba(255,255,255,.08);
-  }
-  .video-placeholder::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 20%, rgba(255,107,69,.18), transparent 60%);
-  }
-  .video-dim{
-    position:absolute;top:16px;left:0;right:0;text-align:center;z-index:1;
-    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-    color:rgba(255,255,255,.4);font-weight:700;
-  }
-  .video-play-btn{
-    width:64px;height:64px;border-radius:50%;z-index:1;
-    background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);
-    display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);
-  }
-  .video-play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px;}
-  .video-placeholder-text{z-index:1;color:rgba(255,255,255,.78);font-size:13.5px;font-weight:600;text-align:center;padding:0 20px;}
-  .product-video{width:100%;height:100%;object-fit:cover;display:block;}
 </style>
 </head>
 <body>
@@ -449,30 +440,15 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
     <div class="img-frame">
       <img src="/pet-feeders/1-PETLIBRO.jpg" alt="PETLIBRO RFID Automatic Cat Feeder, black, anti-stealing collar sensor model" loading="eager">
     </div>
-    <div class="section-label" style="margin-bottom:6px;">Overall Winner</div>
-    <h3 style="margin:0 0 8px;font-size:22px;">PETLIBRO RFID Feeder — Anti-Stealing</h3>
-    <p style="color:var(--muted);margin:0;font-size:14.5px;">Collar-sensor recognition, diet tracking, and Wi-Fi scheduling built for multi-cat homes.</p>
+    <div class="section-label" style="margin-bottom:4px;">Overall Winner</div>
+    <h3 style="margin:0 0 6px;font-size:17px;">PETLIBRO RFID Feeder — Anti-Stealing</h3>
+    <p style="color:var(--muted);margin:0;font-size:13px;">Collar-sensor recognition, diet tracking, and Wi-Fi scheduling built for multi-cat homes.</p>
     <div class="rating-row">
       <div class="rating-num">4.5</div>
       <div class="rating-sub">/5 — verified<br>Amazon reviews</div>
     </div>
   </div>
 </div>
-
-<section id="video">
-  <div class="section-head">
-    <div class="section-label">Watch</div>
-    <h2>See it in action</h2>
-    <p>A short video walkthrough of the feeder in real use.</p>
-  </div>
-  <div class="video-frame">
-    <div class="video-placeholder" id="videoPlaceholder">
-      <video class="product-video" src="/pet-feeders/product-video.mp4" poster="/pet-feeders/product-video-poster.jpg" autoplay muted loop playsinline controls preload="auto">
-        Your browser doesn't support embedded video.
-      </video>
-    </div>
-  </div>
-</section>
 
 <section id="picks">
   <div class="section-head">
