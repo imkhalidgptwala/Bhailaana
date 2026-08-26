@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bhailaana-local",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8090", "--directory", "C:\\Users\\KHALID~1\\AppData\\Local\\Temp\\bhailaana-repo"],
+      "port": 8090
+    }
+  ]
+}
