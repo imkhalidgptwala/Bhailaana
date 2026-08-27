@@ -26,7 +26,7 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 <meta name="description" content="A practical, no-jargon guide to getting useful answers out of AI chat tools — with real before-and-after examples.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -130,7 +130,9 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 
 <section class="tight">
   <div class="wrap">
-    <article class="article-body prose reveal">
+  <div class="article-layout reveal">
+  <div class="article-main">
+    <article class="article-body prose">
 
       <p>If you've ever typed a question into an AI chatbot and gotten a vague, generic answer back, the problem usually isn't the AI — it's the prompt. The good news: writing a better prompt is a skill anyone can learn in about ten minutes.</p>
 
@@ -167,6 +169,136 @@ Format: [how you want the answer structured]</code></pre>
       <span class="article-tag">Prompt Engineering</span>
       <span class="article-tag">Beginners</span>
     </div>
+
+    <div class="example-prompt reveal">
+      <div class="example-label">✏️ See It In Action</div>
+      <p class="example-intro">Here's the template from above, filled in for a real request — asking AI to write a product description for an online pet store:</p>
+      <pre><code><span class="ex-role">Role:</span> You are an experienced e-commerce copywriter who writes concise, benefit-focused product descriptions.
+
+<span class="ex-role">Task:</span> Write a 60-word product description for a stainless steel automatic pet feeder with a companion app.
+
+<span class="ex-role">Context:</span> My customers are busy pet owners aged 25–45 who care about their pet's health but don't have time to hand-feed on a strict schedule. Keep the tone warm and reassuring, not overly salesy.
+
+<span class="ex-role">Format:</span> One short paragraph, followed by 3 bullet points highlighting key features.</code></pre>
+      <p class="example-note">Notice every line answers one specific question — who the AI is, what to make, why it matters to the reader, and how to shape the result. That's the whole trick: a vague ask becomes an easy one once you've answered those four questions yourself.</p>
+    </div>
+  </div>
+  <aside class="article-side">
+    <div class="prompt-infographic">
+      <svg viewBox="0 0 340 740" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pi-title pi-desc">
+        <title id="pi-title">5 Steps to Better AI Prompts</title>
+        <desc id="pi-desc">An infographic summarizing five steps for writing better AI prompts, with an Urdu translation beneath each sentence: be specific, give context, show reasoning, iterate, and use a reusable template.</desc>
+        <defs>
+          <linearGradient id="piBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0E2038"/>
+            <stop offset="100%" stop-color="#071426"/>
+          </linearGradient>
+          <linearGradient id="piNum" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2F7BFF"/>
+            <stop offset="100%" stop-color="#176BFF"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="0.5" y="0.5" width="339" height="739" rx="18" fill="url(#piBg)" stroke="rgba(143,161,184,0.26)"/>
+
+        <!-- Header -->
+        <text x="26" y="42" font-family="Space Grotesk, sans-serif" font-size="12" font-weight="600" fill="#FFB800" letter-spacing="1.5">QUICK REFERENCE</text>
+        <text x="26" y="70" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="700" fill="#E8EDF5">5 Steps to Better</text>
+        <text x="26" y="94" font-family="Space Grotesk, sans-serif" font-size="20" font-weight="700" fill="#E8EDF5">AI Prompts</text>
+        <text x="314" y="118" font-family="Noto Nastaliq Urdu, serif" font-size="13" fill="#8FA1B8" text-anchor="start" direction="rtl">بہتر AI پرامپٹس کے 5 مراحل</text>
+
+        <!-- Timeline spine -->
+        <line x1="46" y1="155" x2="46" y2="535" stroke="rgba(143,161,184,0.26)" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+        <!-- Step 1 -->
+        <circle cx="46" cy="155" r="18" fill="url(#piNum)"/>
+        <text x="46" y="161" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+        <text x="80" y="145" font-family="Space Grotesk, sans-serif" font-size="14.5" font-weight="600" fill="#E8EDF5">Be specific</text>
+        <text x="80" y="166" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">Give a role, audience &amp;</text>
+        <text x="80" y="181" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">constraint, not a topic.</text>
+        <text x="314" y="201" font-family="Noto Nastaliq Urdu, serif" font-size="12.5" fill="#8FA1B8" text-anchor="start" direction="rtl">صرف موضوع نہیں بلکہ کردار، سامعین اور حد بتائیں۔</text>
+
+        <!-- Step 2 -->
+        <circle cx="46" cy="245" r="18" fill="url(#piNum)"/>
+        <text x="46" y="251" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+        <text x="80" y="235" font-family="Space Grotesk, sans-serif" font-size="14.5" font-weight="600" fill="#E8EDF5">Add context</text>
+        <text x="80" y="256" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">Who you are, what you</text>
+        <text x="80" y="271" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">need, any limits.</text>
+        <text x="314" y="291" font-family="Noto Nastaliq Urdu, serif" font-size="12.5" fill="#8FA1B8" text-anchor="start" direction="rtl">آپ کون ہیں، کیا چاہیے، اور کوئی حدود بتائیں۔</text>
+
+        <!-- Step 3 -->
+        <circle cx="46" cy="335" r="18" fill="url(#piNum)"/>
+        <text x="46" y="341" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+        <text x="80" y="325" font-family="Space Grotesk, sans-serif" font-size="14.5" font-weight="600" fill="#E8EDF5">Show the work</text>
+        <text x="80" y="346" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">Ask it to explain reasoning</text>
+        <text x="80" y="361" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">before the final answer.</text>
+        <text x="314" y="381" font-family="Noto Nastaliq Urdu, serif" font-size="12.5" fill="#8FA1B8" text-anchor="start" direction="rtl">حتمی جواب سے پہلے وجہ بیان کرنے کو کہیں۔</text>
+
+        <!-- Step 4 -->
+        <circle cx="46" cy="425" r="18" fill="url(#piNum)"/>
+        <text x="46" y="431" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+        <text x="80" y="415" font-family="Space Grotesk, sans-serif" font-size="14.5" font-weight="600" fill="#E8EDF5">Iterate, don't restart</text>
+        <text x="80" y="436" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">"Shorter," "more casual,"</text>
+        <text x="80" y="451" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">"add an example."</text>
+        <text x="314" y="471" font-family="Noto Nastaliq Urdu, serif" font-size="11.5" fill="#8FA1B8" text-anchor="start" direction="rtl">‘مختصر کریں‘، ‘غیر رسمی بنائیں‘، ‘مثال شامل کریں‘۔</text>
+
+        <!-- Step 5 -->
+        <circle cx="46" cy="515" r="18" fill="url(#piNum)"/>
+        <text x="46" y="521" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+        <text x="80" y="505" font-family="Space Grotesk, sans-serif" font-size="14.5" font-weight="600" fill="#E8EDF5">Reuse a template</text>
+        <text x="80" y="526" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">Role, Task, Context,</text>
+        <text x="80" y="541" font-family="Inter, sans-serif" font-size="12" fill="#8FA1B8">Format — every time.</text>
+        <text x="314" y="561" font-family="Noto Nastaliq Urdu, serif" font-size="12.5" fill="#8FA1B8" text-anchor="start" direction="rtl">کردار، کام، سیاق اور فارمیٹ — ہر بار۔</text>
+
+        <!-- Template card -->
+        <rect x="26" y="580" width="288" height="130" rx="12" fill="#071426" stroke="rgba(143,161,184,0.26)"/>
+        <text x="42" y="604" font-family="JetBrains Mono, monospace" font-size="11"><tspan fill="#2F7BFF">Role: </tspan><tspan fill="#8FA1B8">who the AI should act as</tspan></text>
+        <text x="42" y="622" font-family="JetBrains Mono, monospace" font-size="11"><tspan fill="#2F7BFF">Task: </tspan><tspan fill="#8FA1B8">exactly what you want</tspan></text>
+        <text x="42" y="640" font-family="JetBrains Mono, monospace" font-size="11"><tspan fill="#2F7BFF">Context: </tspan><tspan fill="#8FA1B8">anything it needs to know</tspan></text>
+        <text x="42" y="658" font-family="JetBrains Mono, monospace" font-size="11"><tspan fill="#2F7BFF">Format: </tspan><tspan fill="#8FA1B8">how to structure the answer</tspan></text>
+        <text x="298" y="680" font-family="Noto Nastaliq Urdu, serif" font-size="12" fill="#5E7089" text-anchor="start" direction="rtl">کردار، کام، سیاق، فارمیٹ — ہر بار یہی سانچہ استعمال کریں</text>
+      </svg>
+    </div>
+
+    <div class="video-placeholder" role="img" aria-label="Looping animated walkthrough of the 5 steps to better AI prompts, with Urdu subtitles">
+      <div class="vp-badge">▶ 10s looping walkthrough</div>
+      <div class="vp-frame">
+        <div class="vp-slide" style="animation-delay:0s">
+          <span class="vp-num">1</span>
+          <h4>Be specific</h4>
+          <p>Give a role, audience &amp; constraint — not a topic.</p>
+          <p class="vp-ur" dir="rtl">واضح اور مخصوص رہیں</p>
+        </div>
+        <div class="vp-slide" style="animation-delay:2s">
+          <span class="vp-num">2</span>
+          <h4>Add context</h4>
+          <p>Who you are, what you need, any limits.</p>
+          <p class="vp-ur" dir="rtl">سیاق و سباق شامل کریں</p>
+        </div>
+        <div class="vp-slide" style="animation-delay:4s">
+          <span class="vp-num">3</span>
+          <h4>Show the work</h4>
+          <p>Ask it to explain reasoning before the final answer.</p>
+          <p class="vp-ur" dir="rtl">وجہ بھی بتائیں</p>
+        </div>
+        <div class="vp-slide" style="animation-delay:6s">
+          <span class="vp-num">4</span>
+          <h4>Iterate, don't restart</h4>
+          <p>"Shorter," "more casual," "add an example."</p>
+          <p class="vp-ur" dir="rtl">دوبارہ شروع نہ کریں</p>
+        </div>
+        <div class="vp-slide" style="animation-delay:8s">
+          <span class="vp-num">5</span>
+          <h4>Reuse a template</h4>
+          <p>Role, Task, Context, Format — every time.</p>
+          <p class="vp-ur" dir="rtl">ٹیمپلیٹ دوبارہ استعمال کریں</p>
+        </div>
+        <div class="vp-progress"><span></span></div>
+      </div>
+      <p class="vp-caption">Animated preview — drop in a real video clip whenever one's ready.</p>
+    </div>
+  </aside>
+  </div>
   </div>
 </section>
 

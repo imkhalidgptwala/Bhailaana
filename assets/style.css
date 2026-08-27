@@ -566,7 +566,45 @@
   .article-meta .sep{width:4px; height:4px; border-radius:50%; background:var(--muted-dim);}
   .article-cover{margin-top:36px; border-radius:22px; overflow:hidden; aspect-ratio:16/8; border:1px solid var(--line);}
   .article-cover img{width:100%; height:100%; object-fit:cover;}
-  .article-body{max-width:760px; margin:44px auto 0;}
+  .article-layout{display:grid; grid-template-columns:1fr 340px; gap:48px; align-items:start; max-width:1180px; margin:44px auto 0;}
+  .article-main{min-width:0;}
+  .article-side{
+    position:sticky; top:100px; min-height:420px; border:1px dashed var(--line-strong);
+    border-radius:18px; background:var(--bg-dark);
+  }
+  .article-side:has(.prompt-infographic){border-style:solid; overflow:visible; padding:0 0 22px;}
+  .prompt-infographic{width:100%;}
+  .prompt-infographic svg{display:block; width:100%; height:auto;}
+
+  .video-placeholder{padding:0 22px;}
+  .vp-badge{display:inline-flex; align-items:center; gap:6px; font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600; color:#FFB800; letter-spacing:0.5px; margin-bottom:10px;}
+  .vp-frame{position:relative; aspect-ratio:16/9; border-radius:14px; overflow:hidden; border:1px solid var(--line-strong); background:linear-gradient(160deg, var(--bg-navy) 0%, var(--bg-deep) 100%);}
+  .vp-slide{position:absolute; inset:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:6px; padding:20px 24px; opacity:0; animation:vpCycle 10s infinite;}
+  .vp-num{width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--blue-bright),var(--blue)); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:12.5px;}
+  .vp-slide h4{font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; color:var(--soft-white); margin-top:2px;}
+  .vp-slide p{font-size:12.5px; color:var(--muted); line-height:1.4; max-width:90%;}
+  .vp-slide .vp-ur{font-family:'Noto Nastaliq Urdu',serif; font-size:13.5px; color:var(--muted); margin-top:-2px;}
+  .vp-progress{position:absolute; left:0; right:0; bottom:0; height:3px; background:rgba(255,255,255,0.08);}
+  .vp-progress span{display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--blue-bright),var(--gold)); animation:vpProgress 10s linear infinite;}
+  .vp-caption{font-size:11.5px; color:var(--muted-dim); margin-top:10px; text-align:center;}
+  @keyframes vpCycle{
+    0%{opacity:0; transform:translateY(6px);}
+    4%{opacity:1; transform:translateY(0);}
+    18%{opacity:1;}
+    22%{opacity:0; transform:translateY(-6px);}
+    100%{opacity:0;}
+  }
+  @keyframes vpProgress{ from{width:0%;} to{width:100%;} }
+  @media (prefers-reduced-motion:reduce){
+    .vp-slide{animation:none; opacity:0;}
+    .vp-slide:first-child{opacity:1;}
+    .vp-progress span{animation:none; width:20%;}
+  }
+  @media (max-width:980px){
+    .article-layout{grid-template-columns:1fr; gap:32px;}
+    .article-side{position:static; min-height:220px;}
+  }
+  .article-body{max-width:760px;}
   .prose{color:var(--soft-white); font-size:16.5px; line-height:1.8;}
   .prose p{margin-bottom:20px;}
   .prose h2{font-size:26px; margin:40px 0 16px;}
@@ -580,9 +618,27 @@
   .prose strong{color:var(--white);}
   .prose a{color:var(--blue-bright); text-decoration:underline; text-underline-offset:3px;}
   .article-tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:40px; padding-top:28px; border-top:1px solid var(--line);}
+  .example-prompt{margin-top:36px; padding:28px; border-radius:16px; border:1px solid var(--line-strong); background:linear-gradient(160deg, var(--bg-navy-soft) 0%, var(--bg-dark) 100%);}
+  .example-label{font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:13px; color:var(--gold-soft); letter-spacing:0.5px; margin-bottom:10px;}
+  .example-intro{color:var(--muted); font-size:14.5px; line-height:1.6; margin-bottom:18px;}
+  .example-prompt pre{margin:0;}
+  .example-prompt code{font-size:13.5px; line-height:1.9; white-space:pre-wrap;}
+  .example-prompt .ex-role{color:var(--blue-bright); font-weight:600;}
+  .example-note{color:var(--muted); font-size:13.5px; line-height:1.65; margin-top:18px;}
+  .article-inline-img{margin:28px 0; border-radius:16px; overflow:hidden; border:1px solid var(--line);}
+  .article-inline-img img{width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover;}
+  .faq-list{margin-top:8px; display:flex; flex-direction:column; gap:12px;}
+  .faq-item{background:var(--bg-navy-soft); border:1px solid var(--line); border-radius:12px; padding:16px 20px;}
+  .faq-item summary{cursor:pointer; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:15.5px; color:var(--soft-white); list-style:none;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::before{content:'+'; display:inline-block; width:18px; color:var(--blue-bright); font-weight:700;}
+  .faq-item[open] summary::before{content:'−';}
+  .faq-item p{margin-top:12px; padding-left:18px; color:var(--muted); font-size:14.5px; line-height:1.7;}
+  .sources-note{margin-top:32px; padding:20px 24px; border-radius:14px; border:1px dashed var(--line-strong); background:var(--bg-dark);}
+  .sources-note strong{display:block; font-family:'Space Grotesk',sans-serif; color:var(--gold-soft); font-size:13.5px; letter-spacing:0.3px; margin-bottom:8px;}
+  .sources-note p{color:var(--muted); font-size:13.5px; line-height:1.65; margin:0;}
   .article-tag{font-size:12.5px; color:var(--muted); background:var(--bg-navy); border:1px solid var(--line); padding:6px 14px; border-radius:100px;}
   .related-heading{font-size:22px; margin-bottom:24px;}
-  @media (max-width:760px){ .article-body{margin-left:20px; margin-right:20px;} }
 
   /* ---------- Card author byline ---------- */
   .card-author{display:flex; align-items:center; gap:9px; margin-top:16px; padding-top:14px; border-top:1px solid var(--line);}
