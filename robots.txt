@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhailaana.khalidsanghera.com/sitemap.xml
