@@ -22,8 +22,8 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<title>Blog — Bhailaana</title>
-<meta name="description" content="Latest articles, guides and technology commentary from Bhailaana.">
+<title>A Beginner's Guide to Writing Better AI Prompts — Bhailaana Blog</title>
+<meta name="description" content="A practical, no-jargon guide to getting useful answers out of AI chat tools — with real before-and-after examples.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -32,6 +32,24 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 <body>
 
 <div class="bg-glow"></div>
+
+<!-- ============ TOP PROMO BAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <span class="bolt">⚡</span>
+      <span>FLASH SALE: Up to 40% OFF on Selected Items</span>
+      <button class="btn-flash">Shop Now</button>
+    </div>
+    <div class="topbar-right">
+      <span>Free Shipping Over $100</span>
+      <span class="sep"></span>
+      <span>30-Day Returns</span>
+      <span class="sep"></span>
+      <span>USD</span>
+    </div>
+  </div>
+</div>
 
 <!-- ============ MAIN NAV ============ -->
 <header class="nav">
@@ -58,6 +76,14 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
       <button class="icon-btn" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       </button>
+      <button class="icon-btn" aria-label="Wishlist" id="wishNavBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        <span class="badge-count" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn" aria-label="Cart" id="cartNavBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+        <span class="badge-count" id="cartCount">0</span>
+      </button>
       <button class="btn-account">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         <span>My Account</span>
@@ -80,80 +106,99 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   </div>
 </header>
 
-<!-- ============ BLOG HERO CAROUSEL ============ -->
-<div class="blog-hero-carousel" id="blogHeroCarousel">
-  <div class="bh-slide active">
-    <img src="https://picsum.photos/seed/bhailaana-blog-prompting/1600/900" alt="AI Tutorials — writing better AI prompts">
-  </div>
-  <div class="bh-slide">
-    <img src="https://picsum.photos/seed/bhailaana-blog-aitoolsnews/1600/900" alt="AI News & Tools — a grid of AI app icons">
-  </div>
-  <div class="bh-slide">
-    <img src="https://picsum.photos/seed/bhailaana-blog-inspiration/1600/900" alt="Inspiration Stories — sunrise over a city skyline">
-  </div>
-  <div class="bh-slide">
-    <img class="bh-zoompan" src="https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600" alt="An AI assistant bot working alongside a laptop, representing tools like Claude, ChatGPT and Cursor in action">
-  </div>
-  <div class="bh-slide">
-    <img class="bh-zoompan" src="https://images.unsplash.com/photo-1666597107756-ef489e9f1f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600" alt="A group of humanoid robots in action">
-  </div>
-  <div class="bh-slide">
-    <img class="bh-zoompan" src="https://images.unsplash.com/photo-1525338078858-d762b5e32f2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600" alt="A service robot in a retail store, representing AI bots attached to ecommerce">
-  </div>
 
-  <div class="bh-caption">
-    <div class="wrap">
-      <div class="bh-caption-inner" id="bhCaptionInner"></div>
-    </div>
-  </div>
-
-  <button class="bh-arrow prev" aria-label="Previous article"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
-  <button class="bh-arrow next" aria-label="Next article"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg></button>
-  <div class="bh-dots"></div>
-</div>
-
-<!-- ============ BLOG ============ -->
-<section id="blog">
+<!-- ============ ARTICLE ============ -->
+<section class="article-hero">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div>
-        <span class="eyebrow"><span class="dot"></span>FRESH INSIGHTS</span>
-        <h2>Latest from the Blog</h2>
-        <p>AI tutorials, tools & news, and inspiration stories from people building things around the world.</p>
+    <a href="/blog.html" class="back-link">← Back to Blog</a>
+    <div class="article-header reveal">
+      <span class="article-cat-pill ">AI Tutorials</span>
+      <h1>A Beginner's Guide to Writing Better AI Prompts</h1>
+      <div class="article-meta">
+        <span>Aug 20, 2026</span>
+        <span class="sep"></span>
+        <span>6 min read</span>
+        <span class="sep"></span>
+        <span>By the Bhailaana team</span>
       </div>
     </div>
-
-    <div class="filter-row reveal">
-      <div class="filter-bar" id="blogFilterBar">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="tutorials">AI Tutorials</button>
-        <button class="filter-btn" data-filter="news">AI News &amp; Tools</button>
-        <button class="filter-btn" data-filter="inspiration">Inspiration Stories</button>
-      </div>
-      <select class="sort-select" id="blogSort" aria-label="Sort articles">
-        <option value="newest">Newest First</option>
-        <option value="oldest">Oldest First</option>
-      </select>
+    <div class="article-cover reveal">
+      <img src="https://picsum.photos/seed/bhailaana-blog-prompting/1200/600" alt="Person typing on a laptop with a chat interface open">
     </div>
-
-    <div class="blog-grid reveal" id="blogGrid"></div>
   </div>
 </section>
 
-<!-- ============ BLOG CTA BAND ============ -->
 <section class="tight">
   <div class="wrap">
-    <div class="cta-band reveal">
-      <div class="cta-panel dark">
-        <h3>Have an AI story worth sharing?</h3>
-        <p>Tell us how you're using AI to learn, build or create — your story could be featured on the blog.</p>
-        <a href="#contact" class="btn btn-gold">Get In Touch →</a>
+    <article class="article-body prose reveal">
+
+      <p>If you've ever typed a question into an AI chatbot and gotten a vague, generic answer back, the problem usually isn't the AI — it's the prompt. The good news: writing a better prompt is a skill anyone can learn in about ten minutes.</p>
+
+      <h2>1. Say what you want, not just what you're thinking about</h2>
+      <p>Compare these two prompts:</p>
+      <blockquote>"Tell me about marketing."</blockquote>
+      <blockquote>"Give me 5 low-budget marketing ideas for a small pet-supplies store trying to reach first-time cat owners."</blockquote>
+      <p>The second one gives the AI a role, a constraint (low budget), and an audience (first-time cat owners). That's the difference between a generic essay and something you can actually use.</p>
+
+      <h2>2. Give it context it can't guess</h2>
+      <p>AI doesn't know your business, your audience, or your goals unless you tell it. A simple structure that works well:</p>
+      <ul>
+        <li><strong>Who you are:</strong> "I run a small online pet store."</li>
+        <li><strong>What you need:</strong> "I need 3 Instagram caption ideas."</li>
+        <li><strong>Any constraints:</strong> "Keep them under 150 characters and friendly in tone."</li>
+      </ul>
+
+      <h2>3. Ask it to show its work</h2>
+      <p>For anything involving reasoning — comparing options, planning steps, debugging — add a simple instruction like <code>"explain your reasoning before giving the final answer"</code>. This alone noticeably improves accuracy on harder questions.</p>
+
+      <h2>4. Iterate instead of starting over</h2>
+      <p>Your first prompt rarely needs to be perfect. Treat it like a conversation: if the answer is close but not quite right, say exactly what to change — "make this shorter," "more casual tone," "add an example." This is faster than rewriting the whole prompt from scratch.</p>
+
+      <h2>5. A simple template to reuse</h2>
+      <pre><code>Role: [who the AI should act as]
+Task: [exactly what you want]
+Context: [anything it needs to know]
+Format: [how you want the answer structured]</code></pre>
+      <p>Try this template on your next few prompts and you'll notice the difference immediately — sharper, more relevant answers with far less back-and-forth.</p>
+  
+    </article>
+    <div class="article-tags">
+      <span class="article-tag">AI Tutorials</span>
+      <span class="article-tag">Prompt Engineering</span>
+      <span class="article-tag">Beginners</span>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <h3 class="related-heading">Keep Reading</h3>
+    <div class="blog-grid reveal">
+    <a href="/blog/ai-tools-worth-knowing.html" class="card-plain">
+      <div class="card-media">
+        <span class="cat-pill blue">AI News & Tools</span>
+        <img src="https://picsum.photos/seed/bhailaana-blog-aitoolsnews/460/300" alt="AI Tools Worth Knowing About Right Now">
       </div>
-      <div class="cta-panel image" style="background-image:url('https://picsum.photos/seed/bhailaana-blog-cta/700/500');">
-        <h3>New to AI tools?</h3>
-        <p>Start with our beginner-friendly tutorials — no technical background required.</p>
-        <a href="/blog/ai-prompt-writing-basics.html" class="btn btn-primary">Start Learning →</a>
+      <div class="card-body">
+        <div class="blog-date">Aug 15, 2026</div>
+        <h4>AI Tools Worth Knowing About Right Now</h4>
+        <p>A quick, practical rundown of well-established AI tools that are genuinely useful for everyday work, creativity, and learning.</p>
+        <span class="read-more">Read More →</span>
       </div>
+    </a>
+
+    <a href="/blog/everyday-people-building-with-ai.html" class="card-plain">
+      <div class="card-media">
+        <span class="cat-pill mint">Inspiration Stories</span>
+        <img src="https://picsum.photos/seed/bhailaana-blog-inspiration/460/300" alt="Small Steps, Big Change: Everyday People Building With AI">
+      </div>
+      <div class="card-body">
+        <div class="blog-date">Aug 8, 2026</div>
+        <h4>Small Steps, Big Change: Everyday People Building With AI</h4>
+        <p>You don’t need a tech background to build something meaningful with AI — a look at how ordinary people are getting started.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </a>
     </div>
   </div>
 </section>
@@ -280,121 +325,6 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
 </button>
 
-<script>
-/* ============ BLOG ============ */
-const blogPosts = [
-  {slug:'ai-prompt-writing-basics', img:'bhailaana-blog-prompting', cat:'tutorials', label:'AI Tutorials', color:'', date:'Aug 20, 2026', title:"A Beginner's Guide to Writing Better AI Prompts", excerpt:'A practical, no-jargon guide to getting useful answers out of AI chat tools.'},
-  {slug:'ai-tools-worth-knowing', img:'bhailaana-blog-aitoolsnews', cat:'news', label:'AI News & Tools', color:'blue', date:'Aug 15, 2026', title:'AI Tools Worth Knowing About Right Now', excerpt:'A practical rundown of AI tools that are genuinely useful for work, creativity and learning.'},
-  {slug:'everyday-people-building-with-ai', img:'bhailaana-blog-inspiration', cat:'inspiration', label:'Inspiration Stories', color:'mint', date:'Aug 8, 2026', title:'Small Steps, Big Change: Everyday People Building With AI', excerpt:"You don't need a tech background to build something meaningful with AI."},
-];
-let blogFilter = 'all';
-let blogSort = 'newest';
-function renderBlog(){
-  const grid = document.getElementById('blogGrid');
-  let items = blogFilter==='all' ? blogPosts.slice() : blogPosts.filter(b=>b.cat===blogFilter);
-  items.sort((a,b)=>{
-    const diff = new Date(a.date) - new Date(b.date);
-    return blogSort==='newest' ? -diff : diff;
-  });
-  grid.innerHTML = items.map(b=>`
-    <a href="/blog/${b.slug}.html" class="card-plain">
-      <div class="card-media">
-        <span class="cat-pill ${b.color}">${b.label}</span>
-        <img src="https://picsum.photos/seed/${b.img}/460/300" alt="${b.title}">
-      </div>
-      <div class="card-body">
-        <div class="blog-date">${b.date}</div>
-        <h4>${b.title}</h4>
-        <p>${b.excerpt}</p>
-        <span class="read-more">Read More →</span>
-        <div class="card-author">
-          <span class="avatar">B</span>
-          <span>Bhailaana Team</span>
-        </div>
-      </div>
-    </a>
-  `).join('');
-}
-renderBlog();
-document.getElementById('blogFilterBar').addEventListener('click', e=>{
-  const btn = e.target.closest('.filter-btn');
-  if(!btn) return;
-  document.querySelectorAll('#blogFilterBar .filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  blogFilter = btn.dataset.filter;
-  renderBlog();
-});
-document.getElementById('blogSort').addEventListener('change', e=>{
-  blogSort = e.target.value;
-  renderBlog();
-});
-
-/* ============ BLOG HERO CAROUSEL ============ */
-(function(){
-  const root = document.getElementById('blogHeroCarousel');
-  if(!root) return;
-  const slides = root.querySelectorAll('.bh-slide');
-  const captionEl = document.getElementById('bhCaptionInner');
-  const dotsWrap = root.querySelector('.bh-dots');
-
-  const slideData = [
-    {eyebrowClass:'gold', label:'AI TUTORIALS', title:"A Beginner's Guide to Writing Better AI Prompts", desc:'A practical, no-jargon guide to getting useful answers out of AI chat tools.', href:'/blog/ai-prompt-writing-basics.html'},
-    {eyebrowClass:'', label:'AI NEWS & TOOLS', title:'AI Tools Worth Knowing About Right Now', desc:'A practical rundown of AI tools that are genuinely useful for work, creativity and learning.', href:'/blog/ai-tools-worth-knowing.html'},
-    {eyebrowClass:'gold', label:'INSPIRATION STORIES', title:'Small Steps, Big Change: Everyday People Building With AI', desc:"You don't need a tech background to build something meaningful with AI.", href:'/blog/everyday-people-building-with-ai.html'},
-    {eyebrowClass:'', label:'AI TOOLS IN ACTION', title:'Claude, ChatGPT & Cursor: AI Assistants at Work', desc:'How today’s leading AI assistants are helping people write, code and create faster.', href:'/blog/ai-tools-worth-knowing.html'},
-    {eyebrowClass:'gold', label:'ROBOTICS', title:'Robots in Action', desc:'A look at how robotics and AI are moving from labs into everyday spaces.', href:'/blog.html'},
-    {eyebrowClass:'', label:'AI & ECOMMERCE', title:'When a Bot Joins Your Store', desc:'How AI assistants are showing up inside online stores to help shoppers in real time.', href:'/store.html'},
-  ];
-
-  let i = 0, timer;
-
-  function renderCaption(idx){
-    const d = slideData[idx];
-    captionEl.innerHTML = `
-      <span class="eyebrow ${d.eyebrowClass}"><span class="dot"></span>${d.label}</span>
-      <h1>${d.title}</h1>
-      <p>${d.desc}</p>
-      <a href="${d.href}" class="btn btn-primary">Read Article →</a>
-    `;
-  }
-
-  slides.forEach((_, idx)=>{
-    const b = document.createElement('button');
-    if(idx === 0) b.classList.add('active');
-    b.setAttribute('aria-label', 'Go to slide ' + (idx+1));
-    b.addEventListener('click', ()=>{ go(idx); restart(); });
-    dotsWrap.appendChild(b);
-  });
-  const dots = dotsWrap.querySelectorAll('button');
-
-  function restartKenburns(slide){
-    const img = slide.querySelector('img');
-    img.style.animation = 'none';
-    void img.offsetWidth;
-    img.style.animation = '';
-  }
-
-  function go(n){
-    slides[i].classList.remove('active');
-    dots[i].classList.remove('active');
-    i = (n + slides.length) % slides.length;
-    slides[i].classList.add('active');
-    dots[i].classList.add('active');
-    restartKenburns(slides[i]);
-    renderCaption(i);
-  }
-
-  function next(){ go(i+1); }
-  function prev(){ go(i-1); }
-  function restart(){ clearInterval(timer); timer = setInterval(next, 5000); }
-
-  root.querySelector('.bh-arrow.next').addEventListener('click', ()=>{ next(); restart(); });
-  root.querySelector('.bh-arrow.prev').addEventListener('click', ()=>{ prev(); restart(); });
-
-  renderCaption(0);
-  restart();
-})();
-</script>
 <script src="/assets/common.js"></script>
 
 </body>
