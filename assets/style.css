@@ -625,12 +625,13 @@
   .example-prompt code{font-size:13.5px; line-height:1.9; white-space:pre-wrap;}
   .example-prompt .ex-role{color:var(--blue-bright); font-weight:600;}
   .example-note{color:var(--muted); font-size:13.5px; line-height:1.65; margin-top:18px;}
-  .skill-row{display:grid; grid-template-columns:1fr 300px; gap:32px; align-items:start; margin:20px 0 32px;}
+  .skills-article{max-width:1040px; margin:0 auto;}
+  .skill-row{display:grid; grid-template-columns:1fr 340px; gap:40px; align-items:start; margin:20px 0 32px;}
   .skill-text p:first-child{margin-top:0;}
   .skill-text p:last-child{margin-bottom:0;}
   .article-inline-img{margin:0; border-radius:16px; overflow:hidden; border:1px solid var(--line); position:sticky; top:100px;}
   .article-inline-img img{width:100%; height:auto; display:block; aspect-ratio:4/3; object-fit:cover;}
-  @media (max-width:760px){
+  @media (max-width:900px){
     .skill-row{grid-template-columns:1fr; gap:20px;}
     .article-inline-img{position:static; max-width:340px;}
   }
