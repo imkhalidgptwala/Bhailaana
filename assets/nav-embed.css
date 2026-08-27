@@ -1,0 +1,99 @@
+/* Scoped copy of the main-site nav, safe to drop into pages with their own
+   design system (like /pet-feeders/). Every rule is scoped under
+   .bh-nav-scope so it can never collide with that page's own CSS. */
+.bh-nav-scope{
+  --bh-bg-deep:#030914;
+  --bh-bg-navy:#0B1B33;
+  --bh-blue:#176BFF;
+  --bh-blue-bright:#2F7BFF;
+  --bh-gold:#FFB800;
+  --bh-gold-soft:#FFD060;
+  --bh-white:#FFFFFF;
+  --bh-soft-white:#E8EDF5;
+  --bh-muted:#8FA1B8;
+  --bh-line:rgba(143,161,184,0.14);
+  --bh-line-strong:rgba(143,161,184,0.26);
+  --bh-shadow-glow-blue:0 0 0 1px rgba(23,107,255,0.25), 0 12px 40px -8px rgba(23,107,255,0.45);
+  --bh-ease:cubic-bezier(.22,1,.36,1);
+  font-family:'Inter',sans-serif;
+}
+.bh-nav-scope *{box-sizing:border-box;}
+.bh-nav-scope a{text-decoration:none; color:inherit;}
+.bh-nav-scope button{font-family:inherit; cursor:pointer;}
+
+.bh-nav-scope .bh-wrap{max-width:1320px; margin:0 auto; padding:0 32px;}
+
+.bh-nav-scope header.nav{
+  position:sticky; top:0; z-index:100;
+  background:rgba(3,9,20,0.92);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid var(--bh-line);
+  padding:0; margin:0; display:block; width:100%;
+}
+.bh-nav-scope header.nav .bh-wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 32px;
+}
+.bh-nav-scope .brand{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif;}
+.bh-nav-scope .brand-urdu{height:26px; width:auto; margin-left:2px; display:block; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35));}
+.bh-nav-scope .brand .mark{
+  width:38px; height:38px; border-radius:11px;
+  background:linear-gradient(150deg, var(--bh-blue) 0%, var(--bh-blue-bright) 55%, var(--bh-gold) 130%);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700; color:var(--bh-bg-deep); font-size:18px;
+  box-shadow:0 6px 18px -4px rgba(23,107,255,0.55);
+  flex-shrink:0;
+}
+.bh-nav-scope .brand .name{font-size:20px; font-weight:700; color:var(--bh-white); letter-spacing:-0.01em;}
+.bh-nav-scope .brand .name em{font-style:normal; color:var(--bh-gold);}
+
+.bh-nav-scope .nav-links{display:flex; align-items:center; gap:2px;}
+.bh-nav-scope .nav-links a{
+  position:relative; padding:10px 16px; font-size:14.5px; font-weight:500;
+  color:var(--bh-muted); border-radius:8px; white-space:nowrap; flex-shrink:0;
+  transition:color .2s var(--bh-ease);
+}
+.bh-nav-scope .nav-links a:hover{color:var(--bh-soft-white);}
+.bh-nav-scope .nav-links a.active{color:var(--bh-white);}
+.bh-nav-scope .nav-links a.active::after{
+  content:""; position:absolute; left:16px; right:16px; bottom:4px; height:2px;
+  background:linear-gradient(90deg, var(--bh-blue-bright), var(--bh-gold)); border-radius:2px;
+}
+@media (max-width:1100px){ .bh-nav-scope .nav-links{display:none;} }
+
+.bh-nav-scope .nav-actions{display:flex; align-items:center; gap:6px;}
+.bh-nav-scope .icon-btn{
+  width:40px; height:40px; border-radius:10px; border:1px solid transparent;
+  background:transparent; color:var(--bh-soft-white);
+  display:flex; align-items:center; justify-content:center; position:relative;
+  transition:background .2s var(--bh-ease), border-color .2s var(--bh-ease), transform .2s var(--bh-ease);
+}
+.bh-nav-scope .icon-btn:hover{background:var(--bh-bg-navy); border-color:var(--bh-line-strong); transform:translateY(-1px);}
+.bh-nav-scope .icon-btn svg{width:19px; height:19px;}
+.bh-nav-scope .badge-count{
+  position:absolute; top:2px; right:2px; background:var(--bh-gold); color:var(--bh-bg-deep);
+  font-size:9.5px; font-weight:800; min-width:15px; height:15px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.bh-nav-scope .btn-account{
+  margin-left:8px; display:flex; align-items:center; gap:8px;
+  background:var(--bh-blue); color:var(--bh-white); border:none;
+  padding:9px 18px 9px 14px; border-radius:100px; font-size:14px; font-weight:600;
+  transition:background .2s var(--bh-ease), box-shadow .2s var(--bh-ease), transform .2s var(--bh-ease);
+}
+.bh-nav-scope .btn-account:hover{background:var(--bh-blue-bright); box-shadow:var(--bh-shadow-glow-blue); transform:translateY(-1px);}
+.bh-nav-scope .btn-account svg{width:16px; height:16px;}
+@media (max-width:640px){ .bh-nav-scope .btn-account span{display:none;} .bh-nav-scope .btn-account{padding:9px;} }
+
+.bh-nav-scope .hamburger{display:none; width:40px; height:40px; border-radius:10px; border:1px solid var(--bh-line-strong); background:var(--bh-bg-navy); align-items:center; justify-content:center; flex-direction:column; gap:4px;}
+.bh-nav-scope .hamburger span{width:18px; height:2px; background:var(--bh-soft-white); border-radius:2px; transition:transform .25s var(--bh-ease), opacity .25s var(--bh-ease);}
+@media (max-width:1100px){ .bh-nav-scope .hamburger{display:flex;} }
+
+.bh-nav-scope .mobile-menu{
+  display:none; flex-direction:column; gap:2px; padding:10px 16px 22px;
+  border-top:1px solid var(--bh-line);
+  background:rgba(3,9,20,0.98);
+}
+.bh-nav-scope .mobile-menu.open{display:flex;}
+.bh-nav-scope .mobile-menu a{padding:13px 10px; font-size:16px; font-weight:500; color:var(--bh-soft-white); border-bottom:1px solid var(--bh-line);}
