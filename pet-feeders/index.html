@@ -326,7 +326,22 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
     font-size:13px;color:var(--muted);
   }
-  footer .brand{font-size:15px;}
+  footer .brand{
+    display:flex;align-items:center;gap:10px;
+    font-family:'Fraunces',serif;font-size:19px;font-weight:700;color:var(--navy-deep);
+  }
+  footer .brand .mark{
+    width:32px;height:32px;border-radius:10px;
+    background:linear-gradient(150deg,var(--sunset) 0%, var(--gold) 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:16px;font-weight:700;
+    box-shadow:0 8px 18px -6px rgba(255,107,69,.55);
+    flex-shrink:0;
+  }
+  footer .brand .accent{
+    background:linear-gradient(100deg,var(--sunset-deep),var(--sunset) 45%, var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
 
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;padding-top:8vw;}
@@ -657,8 +672,8 @@ src="https://www.facebook.com/tr?id=1821752792141206&ev=PageView&noscript=1"
 </section>
 
 <footer>
-  <div class="brand"><span class="mark" style="width:26px;height:26px;font-size:13px;">🐾</span>Paw<span style="color:var(--sunset-deep);">&amp;</span>Pixel</div>
-  <div>© 2026 Paw &amp; Pixel — Independent pet gear reviews.</div>
+  <div class="brand"><span class="mark">B</span>Bhail<span class="accent">aa</span>na</div>
+  <div>© 2026 Bhailaana — Independent pet gear reviews.</div>
 </footer>
 
 <script type="application/ld+json">
